@@ -1,0 +1,4 @@
+/coverage/
+/dist/
+/test/test-app/
+/pnpm-lock.yaml
