@@ -1,0 +1,63 @@
+{
+  "name": "@bagaar/build-helpers",
+  "version": "0.0.0",
+  "description": "Build helpers for Bagaar apps.",
+  "repository": "https://github.com/Bagaar/build-helpers",
+  "license": "MIT",
+  "author": "Bagaar",
+  "type": "module",
+  "bin": {
+    "@bagaar/build-helpers/clean-dist-folder": "bin/clean-dist-folder.js",
+    "@bagaar/build-helpers/upload-source-maps": "bin/upload-source-maps.js"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "scripts": {
+    "lint": "concurrently --group --prefix-colors auto \"npm:lint:*(!fix)\"",
+    "lint:fix": "concurrently --group --prefix-colors auto \"npm:lint:*:fix\"",
+    "lint:format": "prettier . --cache --check",
+    "lint:format:fix": "prettier . --cache --write",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "prepare": "husky install",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "@bugsnag/source-maps": "^2.3.1",
+    "chalk": "^5.2.0",
+    "dotenv": "^16.0.3",
+    "envalid": "^7.3.1",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^11.1.0",
+    "git-commit-info": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@vitest/coverage-c8": "^0.28.5",
+    "concurrently": "^7.5.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-n": "^15.6.1",
+    "husky": "^8.0.2",
+    "prettier": "^2.7.1",
+    "recursive-copy": "^2.0.14",
+    "vitest": "^0.28.5"
+  },
+  "packageManager": "pnpm@7.27.0",
+  "engines": {
+    "node": ">= 18"
+  },
+  "volta": {
+    "node": "18.14.0"
+  }
+}
