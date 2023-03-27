@@ -52,7 +52,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/eslint-parser": "^7.19.1",
-    "@commitlint/cli": "^17.2.0",
+    "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@types/fs-extra": "^11.0.1",
     "@vitest/coverage-c8": "^0.28.5",
