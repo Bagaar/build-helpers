@@ -58,12 +58,12 @@ export default async function uploadSourceMaps() {
     try {
       await browser.uploadOne({ apiKey, appVersion, bundleUrl, sourceMap });
 
-      logger.success(`Uploaded source map: "${sourceMap}"`);
+      logger.success(`Uploaded source map: ${sourceMap}`);
     } catch (exception: any) {
       const reason = exception?.responseText || "unknown";
 
       logger.error(
-        `Could not upload source map: "${sourceMap}" - Reason: ${reason}`,
+        `Could not upload source map: ${sourceMap} - Reason: ${reason}`,
       );
     }
   }

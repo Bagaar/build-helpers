@@ -1,4 +1,4 @@
-import chalk, { ChalkFunction, supportsColor } from "chalk";
+import chalk, { ChalkFunction } from "chalk";
 import { env } from "node:process";
 
 export default class Logger {
@@ -9,19 +9,19 @@ export default class Logger {
   }
 
   error(...args: string[]) {
-    this.#log(chalk.bold.bgRed, ...args);
+    this.#log(chalk.redBright, ...args);
   }
 
   info(...args: string[]) {
-    this.#log(chalk.bold.bgCyan, ...args);
+    this.#log(chalk.cyanBright, ...args);
   }
 
   success(...args: string[]) {
-    this.#log(chalk.bold.bgGreen, ...args);
+    this.#log(chalk.greenBright, ...args);
   }
 
   warning(...args: string[]) {
-    this.#log(chalk.bold.bgYellow, ...args);
+    this.#log(chalk.yellowBright, ...args);
   }
 
   #log(color: ChalkFunction, ...args: string[]) {
@@ -29,10 +29,6 @@ export default class Logger {
       return;
     }
 
-    const prefix = supportsColor
-      ? color(` ${this.prefix} `)
-      : `[${this.prefix}]`;
-
-    console.log(prefix, ...args);
+    console.log(color(`[${this.prefix}]`), ...args);
   }
 }
