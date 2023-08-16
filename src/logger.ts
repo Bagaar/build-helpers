@@ -1,4 +1,4 @@
-import chalk, { ChalkInstance, supportsColor } from "chalk";
+import chalk, { ChalkFunction, supportsColor } from "chalk";
 import { env } from "node:process";
 
 export default class Logger {
@@ -24,7 +24,7 @@ export default class Logger {
     this.#log(chalk.bold.bgYellow, ...args);
   }
 
-  #log(color: ChalkInstance, ...args: string[]) {
+  #log(color: ChalkFunction, ...args: string[]) {
     if (env.BUILD_HELPERS_LOGGING === "false") {
       return;
     }
