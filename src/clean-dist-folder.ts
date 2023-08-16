@@ -28,8 +28,12 @@ export default function cleanDistFolder({ cwd = "." } = {}) {
     `${assets}/${packageFile.name}.css`,
   ]);
 
-  files.forEach((file) => {
-    fsExtra.removeSync(file);
-    logger.success(`Removed file: ${file}`);
-  });
+  if (files.length > 0) {
+    files.forEach((file) => {
+      fsExtra.removeSync(file);
+      logger.success(`Removed file: ${file}`);
+    });
+  } else {
+    logger.info(`"dist" folder is already clean.`);
+  }
 }
