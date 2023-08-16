@@ -30,6 +30,6 @@ export default function cleanDistFolder({ cwd = "." } = {}) {
 
   files.forEach((file) => {
     fsExtra.removeSync(file);
-    logger.success(`"${file}" was removed.`);
+    logger.success(`Removed file: "${file}"`);
   });
 }

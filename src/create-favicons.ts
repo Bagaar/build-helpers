@@ -25,7 +25,7 @@ export default async function createFavicons({ cwd = "." } = {}) {
     const imagePath = `${publicPath}/${image.name}`;
 
     fsExtra.writeFileSync(imagePath, image.contents);
-    logger.success(`Created "${imagePath}"`);
+    logger.success(`Created image: "${imagePath}"`);
   });
 
   const index = fsExtra.readFileSync(indexPath, { encoding: "utf-8" });
@@ -51,5 +51,5 @@ export default async function createFavicons({ cwd = "." } = {}) {
     encoding: "utf-8",
   });
 
-  logger.success(`Updated "${indexPath}"`);
+  logger.success(`Updated file: "${indexPath}"`);
 }
