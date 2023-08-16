@@ -29,7 +29,9 @@ export default class Logger {
       return;
     }
 
-    const prefix = supportsColor ? color(this.prefix) : `[${this.prefix}]`;
+    const prefix = supportsColor
+      ? color(` ${this.prefix} `)
+      : `[${this.prefix}]`;
 
     console.log(prefix, ...args);
   }
