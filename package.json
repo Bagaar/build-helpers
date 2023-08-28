@@ -63,7 +63,7 @@
     "prettier": "^3.0.1",
     "recursive-copy": "^2.0.14",
     "typescript": "^5.1.6",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.3"
   },
   "packageManager": "pnpm@8.6.12",
   "engines": {
