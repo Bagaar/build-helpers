@@ -1,5 +1,5 @@
 import { it } from "vitest";
-import { getBuildInfo } from "../src";
+import getBuildInfo from "../src/get-build-info";
 
 it("gets the build info", (ctx) => {
   const buildInfo = getBuildInfo({ cwd: "./test/test-app" });

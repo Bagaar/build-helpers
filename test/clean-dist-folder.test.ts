@@ -1,7 +1,7 @@
 import fsExtra from "fs-extra";
 import recursiveCopy from "recursive-copy";
 import { it } from "vitest";
-import { cleanDistFolder } from "../src";
+import cleanDistFolder from "../src/clean-dist-folder";
 
 it('cleans the "dist" folder', async (ctx) => {
   const cwd = "./test/test-app-copy";
