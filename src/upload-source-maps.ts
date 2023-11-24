@@ -2,6 +2,7 @@ import { browser } from "@bugsnag/source-maps";
 import { config as readEnvFile } from "dotenv";
 import { bool, cleanEnv, str } from "envalid";
 import fastGlob from "fast-glob";
+import { basename } from "node:path";
 import { env } from "node:process";
 import Logger from "./logger";
 import getBuildInfo from "./get-build-info";
@@ -72,5 +73,5 @@ export default async function uploadSourceMaps() {
 function bundleFilename(sourceMap: string) {
   const replacement = sourceMap.endsWith(".js.map") ? "" : ".js";
 
-  return sourceMap.replace(/\.map$/, replacement);
+  return basename(sourceMap).replace(/\.map$/, replacement);
 }
