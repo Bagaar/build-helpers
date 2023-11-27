@@ -2,6 +2,7 @@ import { browser } from "@bugsnag/source-maps";
 import { config as readEnvFile } from "dotenv";
 import { bool, cleanEnv, str } from "envalid";
 import fastGlob from "fast-glob";
+import fsExtra from "fs-extra";
 import { basename } from "node:path";
 import { env } from "node:process";
 import Logger from "./logger";
@@ -41,20 +42,37 @@ export default async function uploadSourceMaps() {
     return logger.error("Bugsnag bundle host is not provided.");
   }
 
-  const sourceMaps = fastGlob.sync([
-    "!dist/assets/**/*.css.map",
-    "dist/assets/**/*.map",
-  ]);
+  const files = await fastGlob(["dist/assets/*.js"]);
 
-  if (sourceMaps.length === 0) {
-    return logger.warning("No source maps found.");
+  if (files.length === 0) {
+    return logger.warning("No JavaScript files found.");
   }
 
   const appVersion = getBuildInfo().versionWithHash;
 
-  for (let i = 0; i < sourceMaps.length; i++) {
-    const sourceMap = sourceMaps[i];
-    const bundleUrl = `${bundleHost}assets/${bundleFilename(sourceMap)}`;
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+
+    let sourceMap: string | null = `${file}.map`;
+
+    if ((await fsExtra.exists(sourceMap)) === false) {
+      const content = await fsExtra.readFile(file, { encoding: "utf-8" });
+      const lastLine = content.split("\n").at(-1);
+
+      if (lastLine?.startsWith("//# sourceMappingURL=")) {
+        sourceMap = `dist/assets/${lastLine.split("=").at(-1)}`;
+
+        if ((await fsExtra.exists(sourceMap)) === false) {
+          sourceMap = null;
+        }
+      }
+    }
+
+    if (sourceMap === null) {
+      continue;
+    }
+
+    const bundleUrl = `${bundleHost}assets/${basename(file)}`;
 
     try {
       await browser.uploadOne({ apiKey, appVersion, bundleUrl, sourceMap });
@@ -68,10 +86,4 @@ export default async function uploadSourceMaps() {
       );
     }
   }
-}
-
-function bundleFilename(sourceMap: string) {
-  const replacement = sourceMap.endsWith(".js.map") ? "" : ".js";
-
-  return basename(sourceMap).replace(/\.map$/, replacement);
 }
