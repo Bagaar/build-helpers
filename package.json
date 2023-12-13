@@ -13,6 +13,7 @@
   "bin": {
     "clean-dist-folder": "bin/clean-dist-folder.js",
     "create-favicons": "bin/create-favicons.js",
+    "get-build-info": "bin/get-build-info.js",
     "upload-source-maps": "bin/upload-source-maps.js"
   },
   "files": [
