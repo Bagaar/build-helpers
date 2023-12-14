@@ -55,6 +55,7 @@
     "@babel/eslint-parser": "^7.22.10",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "@release-it-plugins/lerna-changelog": "^6.0.0",
     "@types/fs-extra": "^11.0.1",
     "@vitest/coverage-v8": "^0.34.1",
     "concurrently": "^8.2.0",
@@ -63,6 +64,7 @@
     "husky": "^8.0.2",
     "prettier": "^3.0.1",
     "recursive-copy": "^2.0.14",
+    "release-it": "^16.3.0",
     "typescript": "^5.1.6",
     "vitest": "^0.34.1"
   },
@@ -72,5 +74,21 @@
   },
   "volta": {
     "node": "18.14.0"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): ${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    },
+    "plugins": {
+      "@release-it-plugins/lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": false
+      }
+    }
   }
 }
