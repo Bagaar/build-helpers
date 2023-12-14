@@ -44,7 +44,7 @@
     "@bugsnag/source-maps": "^2.3.1",
     "chalk": "^4.1.2",
     "dotenv": "^16.3.1",
-    "envalid": "^7.3.1",
+    "envalid": "^8.0.0",
     "fast-glob": "^3.3.2",
     "favicons": "^7.1.4",
     "fs-extra": "^11.2.0",
