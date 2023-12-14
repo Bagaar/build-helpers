@@ -75,6 +75,9 @@
   "volta": {
     "node": "18.14.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "release-it": {
     "git": {
       "commitMessage": "chore(release): ${version}",
