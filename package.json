@@ -66,7 +66,7 @@
     "recursive-copy": "^2.0.14",
     "release-it": "^16.3.0",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.4"
+    "vitest": "^1.1.0"
   },
   "packageManager": "pnpm@8.6.12",
   "engines": {
