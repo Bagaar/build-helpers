@@ -57,7 +57,7 @@
     "@commitlint/config-conventional": "^18.4.3",
     "@release-it-plugins/lerna-changelog": "^6.0.0",
     "@types/fs-extra": "^11.0.4",
-    "@vitest/coverage-v8": "^1.0.4",
+    "@vitest/coverage-v8": "^1.1.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.55.0",
     "eslint-plugin-n": "^16.4.0",
