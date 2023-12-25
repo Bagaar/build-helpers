@@ -46,7 +46,7 @@
     "dotenv": "^16.3.1",
     "envalid": "^8.0.0",
     "fast-glob": "^3.3.2",
-    "favicons": "^7.1.4",
+    "favicons": "^7.1.5",
     "fs-extra": "^11.2.0",
     "git-commit-info": "^2.0.2"
   },
