@@ -62,7 +62,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-n": "^16.4.0",
     "husky": "^8.0.2",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.2",
     "recursive-copy": "^2.0.14",
     "release-it": "^16.3.0",
     "typescript": "^5.3.3",
