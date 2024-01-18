@@ -1,4 +1,16 @@
 
+
+## v0.1.1 (2024-01-18)
+
+#### :rocket: Enhancement
+* [#105](https://github.com/Bagaar/build-helpers/pull/105) Add `update-graphql-schema` command ([@bertdeblock](https://github.com/bertdeblock))
+
+#### :bug: Bug Fix
+* [#104](https://github.com/Bagaar/build-helpers/pull/104) Fix reading the package file from a sub directory ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 ## v0.1.0 (2023-12-14)
 
 #### :bug: Bug Fix
