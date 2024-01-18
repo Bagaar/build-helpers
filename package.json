@@ -14,6 +14,7 @@
     "clean-dist-folder": "bin/clean-dist-folder.js",
     "create-favicons": "bin/create-favicons.js",
     "get-build-info": "bin/get-build-info.js",
+    "update-graphql-schema": "bin/update-graphql-schema.js",
     "upload-source-maps": "bin/upload-source-maps.js"
   },
   "files": [
@@ -44,6 +45,7 @@
     "@bugsnag/source-maps": "^2.3.1",
     "chalk": "^4.1.2",
     "dotenv": "^16.3.1",
+    "download": "^8.0.0",
     "envalid": "^8.0.0",
     "fast-glob": "^3.3.2",
     "favicons": "^7.1.4",
@@ -57,6 +59,7 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@release-it-plugins/lerna-changelog": "^6.0.0",
+    "@types/download": "^8.0.5",
     "@types/fs-extra": "^11.0.4",
     "@vitest/coverage-v8": "^1.0.4",
     "concurrently": "^8.2.2",
