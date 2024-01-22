@@ -68,7 +68,7 @@
     "husky": "^8.0.2",
     "prettier": "^3.2.4",
     "recursive-copy": "^2.0.14",
-    "release-it": "^16.3.0",
+    "release-it": "^17.0.1",
     "typescript": "^5.3.3",
     "vitest": "^1.2.1"
   },
