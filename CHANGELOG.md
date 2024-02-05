@@ -1,5 +1,14 @@
 
 
+
+## v0.1.2 (2024-02-05)
+
+#### :rocket: Enhancement
+* [#123](https://github.com/Bagaar/build-helpers/pull/123) Print diff when updating the GraphQL schema ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 ## v0.1.1 (2024-01-18)
 
 #### :rocket: Enhancement
