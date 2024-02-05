@@ -16,6 +16,10 @@ export default class Logger {
     this.#log(chalk.cyanBright, ...args);
   }
 
+  newLine() {
+    console.log("");
+  }
+
   success(...args: string[]) {
     this.#log(chalk.greenBright, ...args);
   }
