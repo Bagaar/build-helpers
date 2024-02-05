@@ -55,7 +55,7 @@
     "git-diff": "^2.0.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
+    "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.3",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
