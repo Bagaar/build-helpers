@@ -2,6 +2,7 @@ import { config as readEnvFile } from "dotenv";
 import download from "download";
 import { cleanEnv, str } from "envalid";
 import fsExtra from "fs-extra";
+import gitDiff from "git-diff";
 import { join } from "node:path";
 import { env } from "node:process";
 import Logger from "./logger";
@@ -33,10 +34,28 @@ export default async function updateGraphqlSchema({ cwd = "." } = {}) {
     );
   }
 
-  fsExtra.writeFileSync(
-    graphqlConfig.schema,
-    await download(ENV.GRAPHQL_SCHEMA_URL),
-  );
+  let currentSchema = "";
 
-  logger.success(`GraphQL schema updated from "${ENV.GRAPHQL_SCHEMA_URL}".`);
+  if (fsExtra.existsSync(graphqlConfig.schema)) {
+    currentSchema = fsExtra.readFileSync(graphqlConfig.schema, {
+      encoding: "utf-8",
+    });
+  }
+
+  const newSchema = await download(ENV.GRAPHQL_SCHEMA_URL);
+
+  fsExtra.writeFileSync(graphqlConfig.schema, newSchema);
+
+  logger.success(`GraphQL schema updated from:\n${ENV.GRAPHQL_SCHEMA_URL}`);
+
+  if (currentSchema) {
+    const schemaDiff = gitDiff(currentSchema, newSchema.toString(), {
+      color: true,
+    });
+
+    if (schemaDiff) {
+      logger.newLine();
+      logger.info(`Schema diff:\n${schemaDiff}`);
+    }
+  }
 }
