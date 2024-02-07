@@ -46,16 +46,19 @@ export default async function updateGraphqlSchema({ cwd = "." } = {}) {
 
   fsExtra.writeFileSync(graphqlConfig.schema, newSchema);
 
-  logger.success(`GraphQL schema updated from:\n${ENV.GRAPHQL_SCHEMA_URL}`);
-
   if (currentSchema) {
     const schemaDiff = gitDiff(currentSchema, newSchema.toString(), {
       color: true,
     });
 
     if (schemaDiff) {
+      logger.success(`GraphQL schema updated from:\n${ENV.GRAPHQL_SCHEMA_URL}`);
       logger.newLine();
       logger.info(`Schema diff:\n${schemaDiff}`);
+    } else {
+      logger.info("GraphQL schema is already up to date.");
     }
+  } else {
+    logger.success(`GraphQL schema created from:\n${ENV.GRAPHQL_SCHEMA_URL}`);
   }
 }
