@@ -1,6 +1,15 @@
 
 
 
+
+## v0.1.3 (2024-02-07)
+
+#### :rocket: Enhancement
+* [#124](https://github.com/Bagaar/build-helpers/pull/124) Improve `update-graphql-schema` feedback ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 ## v0.1.2 (2024-02-05)
 
 #### :rocket: Enhancement
