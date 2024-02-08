@@ -14,6 +14,9 @@ export default function cleanDistFolder({ cwd = "." } = {}) {
   const assets = `${dist}/assets`;
   const packageFile = readPackageFile({ cwd });
   const files = fastGlob.sync([
+    // msw's Service Worker file:
+    `${dist}/mockServiceWorker.js`,
+
     // In case someone forgot to remove these from the `./public` folder:
     `${assets}/**/.gitkeep`,
 
