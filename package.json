@@ -1,6 +1,6 @@
 {
   "name": "@bagaar/build-helpers",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Build helpers for Bagaar apps.",
   "repository": "https://github.com/Bagaar/build-helpers",
   "license": "MIT",

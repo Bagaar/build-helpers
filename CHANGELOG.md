@@ -4,6 +4,15 @@
 
 
 
+
+## v0.1.6 (2024-02-13)
+
+#### :rocket: Enhancement
+* [#127](https://github.com/Bagaar/build-helpers/pull/127) Add `create-env-file` command ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 ## v0.1.5 (2024-02-13)
 
 #### :rocket: Enhancement
