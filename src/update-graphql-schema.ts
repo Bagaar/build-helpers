@@ -42,7 +42,16 @@ export default async function updateGraphqlSchema({ cwd = "." } = {}) {
     });
   }
 
-  const newSchema = await download(ENV.GRAPHQL_SCHEMA_URL);
+  let newSchema;
+  try {
+    newSchema = await download(ENV.GRAPHQL_SCHEMA_URL);
+  } catch (error) {
+    logger.error(
+      `Failed to download GraphQL schema from:\n${ENV.GRAPHQL_SCHEMA_URL}`,
+    );
+
+    return logger.error(String(error));
+  }
 
   fsExtra.writeFileSync(graphqlConfig.schema, newSchema);
 
