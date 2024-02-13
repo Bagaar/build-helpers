@@ -20,6 +20,9 @@ dependencies:
   envalid:
     specifier: ^8.0.0
     version: 8.0.0
+  envfile:
+    specifier: ^7.1.0
+    version: 7.1.0
   fast-glob:
     specifier: ^3.3.2
     version: 3.3.2
@@ -2698,6 +2701,12 @@ packages:
     engines: {node: '>=8.12'}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /envfile@7.1.0:
+    resolution: {integrity: sha512-dyH4QnnZsArCLhPASr29eqBWDvKpq0GggQFTmysTT/S9TTmt1JrEKNvTBc09Cd7ujVZQful2HBGRMe2agu7Krg==}
+    engines: {node: '>=8'}
+    hasBin: true
     dev: false
 
   /err-code@2.0.3:
