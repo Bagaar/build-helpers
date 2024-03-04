@@ -1,5 +1,4 @@
 import { config as readEnvFile } from "dotenv";
-import download from "download";
 import { cleanEnv, str } from "envalid";
 import fsExtra from "fs-extra";
 import gitDiff from "git-diff";
@@ -44,10 +43,12 @@ export default async function updateGraphqlSchema({ cwd = "." } = {}) {
 
   let newSchema;
   try {
-    newSchema = await download(ENV.GRAPHQL_SCHEMA_URL);
+    const response = await fetch(ENV.GRAPHQL_SCHEMA_URL);
+
+    newSchema = await response.text();
   } catch (error) {
     logger.error(
-      `Failed to download GraphQL schema from:\n${ENV.GRAPHQL_SCHEMA_URL}`,
+      `Failed to fetch GraphQL schema from:\n${ENV.GRAPHQL_SCHEMA_URL}`,
     );
 
     return logger.error(String(error));
