@@ -5,6 +5,15 @@
 
 
 
+
+## v0.1.7 (2024-03-04)
+
+#### :bug: Bug Fix
+* [#129](https://github.com/Bagaar/build-helpers/pull/129) Fix security vulnerability by removing the use of the `download` package ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 1
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+
 ## v0.1.6 (2024-02-13)
 
 #### :rocket: Enhancement
